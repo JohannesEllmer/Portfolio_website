@@ -38,10 +38,10 @@ import dockerLogo from "./docker-logo.png";
 
 // Badges (Zertifikate)
 import cyberBadge from "./cyber-badge.png";
-import intro2IotBadge from "./Intro2Iot.png";
+import intro2IotBadge from "./Intro2IoT.png";
 import sapBadge from "./sap-logo.png";
 
-/** ---------- Typen ---------- */
+/** ---------- Typen ---------- *///
 
 export type Experience = {
   company: string;
