@@ -144,7 +144,7 @@ export default function HeroSection() {
     <section className="py-16 md:py-24 relative overflow-hidden">
       {/* Optimierter Wallpaper-Hintergrund mit img Tag */}
       <img
-        src="/backgroundimg.jpg"
+        src="/backgroundimg2.jpg"
         alt=""
         className="absolute inset-0 -z-20 w-full h-full object-cover opacity-60"
         aria-hidden="true"
@@ -174,7 +174,7 @@ export default function HeroSection() {
               </h1>
               <p className="mt-3 text-lg text-foreground/70">
                 Ich bin{" "}
-                <span className="text-primary">Johannes Ellmer</span>, , HTL-Schüler im
+                <span className="text-primary">Johannes Ellmer</span>, HTL-Schüler im
                 Bereich Informatik und angehender Softwareentwickler mit großem Interesse
                 an performanten Web-Anwendungen, sauberen APIs und klaren Datenmodellen.
                 </p>
@@ -317,7 +317,7 @@ export default function HeroSection() {
                     <img
                       src={personalInfo.profilePicture}
                       alt="Johannes Ellmer – Porträt"
-                      className="block w-full h-auto object-cover aspect-[3/4] max-w-xs mx-auto"
+                      className="block h-auto object-cover aspect-[3/4] mx-auto w-45 sm:w-40 md:w-70"
                       loading="eager"
                       decoding="async"
                       width={300}

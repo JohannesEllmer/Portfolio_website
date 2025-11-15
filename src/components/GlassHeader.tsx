@@ -7,10 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 const LINKS = [
-  { href: "#about", label: "Über mich" },
-  { href: "#career", label: "Werdegang" },
-  { href: "#certificates", label: "Zertifikate" },
+  { href: "#skills", label: "Tech Stack" },
   { href: "#projects", label: "Projekte" },
+  { href: "#certificates", label: "Zertifikate" },
+  { href: "#career", label: "Werdegang" },
+  { href: "#education", label: "Ausbildung" },
   { href: "#contact", label: "Kontakt" },
   { href: "#impressum", label: "Impressum" },
 ];
