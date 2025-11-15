@@ -1,5 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { personalInfo, projects, certificates, skills, workExperience, education } from "@/lib/data";
+import {
+  personalInfo,
+  projects,
+  certificates,
+  skills,
+  workExperience,
+  education,
+} from "@/lib/data";
 import { Mail, Github, MapPin, Search, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
@@ -59,7 +66,12 @@ export default function HeroSection() {
       )
     );
     normalizedSkills.forEach((s) =>
-      res.push({ label: s, sectionId: "#skills", meta: "Technologie", kind: "Skill" })
+      res.push({
+        label: s,
+        sectionId: "#skills",
+        meta: "Technologie",
+        kind: "Skill",
+      })
     );
 
     workExperience?.forEach((w) =>
@@ -115,13 +127,37 @@ export default function HeroSection() {
     el?.scrollIntoView({ behavior: "smooth", block: "start" });
     if (el) {
       el.classList.add("ring-2", "ring-primary/60", "rounded-xl");
-      setTimeout(() => el.classList.remove("ring-2", "ring-primary/60", "rounded-xl"), 900);
+      setTimeout(
+        () =>
+          el.classList.remove(
+            "ring-2",
+            "ring-primary/60",
+            "rounded-xl"
+          ),
+        900
+      );
     }
   };
 
   // ---------- UI ----------
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
+      {/* Optimierter Wallpaper-Hintergrund mit img Tag */}
+      <img
+        src="/backgroundimg.jpg"
+        alt=""
+        className="absolute inset-0 -z-20 w-full h-full object-cover opacity-60"
+        aria-hidden="true"
+        loading="eager"
+        decoding="async"
+      />
+      
+      {/* leichtes Overlay für bessere Lesbarkeit */}
+      <div
+        className="absolute inset-0 -z-10 bg-background/70"
+        aria-hidden="true"
+      />
+
       <div className="container max-w-5xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text */}
@@ -134,10 +170,13 @@ export default function HeroSection() {
             {/* Willkommenstext */}
             <div className="mb-6">
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                Willkommen auf meiner Website! 
+                Willkommen auf meiner Website!
               </h1>
               <p className="mt-3 text-lg text-foreground/70">
-                Ich bin <span className="text-primary">Johannes Ellmer</span> und leidenschaftlicher Softwareentwickler. Ich zaubere Lösungen für performante Anwendungen und moderne Web-Technologien.
+                Ich bin{" "}
+                <span className="text-primary">Johannes Ellmer</span> und
+                leidenschaftlicher Softwareentwickler. Ich zaubere Lösungen
+                für performante Anwendungen und moderne Web-Technologien.
               </p>
             </div>
 
@@ -162,7 +201,9 @@ export default function HeroSection() {
                   onKeyDown={(e) => {
                     if (e.key === "ArrowDown") {
                       e.preventDefault();
-                      setActiveIdx((i) => Math.min(i + 1, Math.max(0, results.length - 1)));
+                      setActiveIdx((i) =>
+                        Math.min(i + 1, Math.max(0, results.length - 1))
+                      );
                     }
                     if (e.key === "ArrowUp") {
                       e.preventDefault();
@@ -208,12 +249,18 @@ export default function HeroSection() {
                       aria-selected={activeIdx === i}
                       className={cn(
                         "w-full text-left px-3 py-2 flex items-center justify-between gap-2",
-                        activeIdx === i ? "bg-white/6" : "hover:bg-white/4"
+                        activeIdx === i
+                          ? "bg-white/6"
+                          : "hover:bg-white/4"
                       )}
                     >
                       <div className="min-w-0">
                         <div className="truncate text-sm">{r.label}</div>
-                        {r.meta && <div className="truncate text-xs text-foreground/60">{r.meta}</div>}
+                        {r.meta && (
+                          <div className="truncate text-xs text-foreground/60">
+                            {r.meta}
+                          </div>
+                        )}
                       </div>
                       <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 text-foreground/70">
                         {r.kind}
@@ -226,7 +273,9 @@ export default function HeroSection() {
 
             {/* Info */}
             <p className="mt-4 text-foreground/85 max-w-prose leading-relaxed">
-              Unmöglich - gibts nicht! Schau dich um und entdecke meine Projekte, Zertifikate und Fähigkeiten. Wenn du Fragen hast oder zusammenarbeiten möchtest, zögere nicht, mich zu kontaktieren.
+              Unmöglich - gibts nicht! Schau dich um und entdecke meine
+              Projekte, Zertifikate und Fähigkeiten. Wenn du Fragen hast oder
+              zusammenarbeiten möchtest, zögere nicht, mich zu kontaktieren.
             </p>
 
             {/* Kontakt */}
@@ -235,14 +284,17 @@ export default function HeroSection() {
                 <MapPin size={16} />
                 <span>St. Johann im Pongau, Österreich</span>
               </div>
-              <a href="mailto:johannes.ellmer@htl-saalfelden.at" className="flex items-center gap-2 hover:text-foreground">
+              <a
+                href="mailto:johannes.ellmer@htl-saalfelden.at"
+                className="flex items-center gap-2 hover:text-foreground transition-colors"
+              >
                 <Mail size={16} /> johannes.ellmer@htl-saalfelden.at
               </a>
               <a
                 href="https://github.com/JohannesEllmer"
                 target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-foreground"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-foreground transition-colors"
               >
                 <Github size={16} /> GitHub
               </a>
@@ -260,6 +312,10 @@ export default function HeroSection() {
                       src={personalInfo.profilePicture}
                       alt="Johannes Ellmer – Porträt"
                       className="block w-full h-auto object-cover aspect-[3/4] max-w-xs mx-auto"
+                      loading="eager"
+                      decoding="async"
+                      width={300}
+                      height={400}
                     />
                   </div>
                   <div className="absolute -z-10 -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-chart-2/10 rounded-3xl opacity-60 blur-xl"></div>
@@ -271,13 +327,22 @@ export default function HeroSection() {
 
         {/* Quicklinks */}
         <div className="mt-10 flex flex-wrap gap-3 text-sm">
-          <a href="#projects" className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 bg-white/5 hover:bg-white/10 transition">
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 bg-white/5 hover:bg-white/10 transition-all duration-200 hover:scale-105"
+          >
             Projekte <ArrowUpRight className="h-4 w-4" />
           </a>
-          <a href="#certificates" className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 bg-white/5 hover:bg-white/10 transition">
+          <a
+            href="#certificates"
+            className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 bg-white/5 hover:bg-white/10 transition-all duration-200 hover:scale-105"
+          >
             Zertifikate <ArrowUpRight className="h-4 w-4" />
           </a>
-          <a href="#career" className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 bg-white/5 hover:bg-white/10 transition">
+          <a
+            href="#career"
+            className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 bg-white/5 hover:bg-white/10 transition-all duration-200 hover:scale-105"
+          >
             Werdegang <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
