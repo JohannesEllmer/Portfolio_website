@@ -151,7 +151,7 @@ export default function HeroSection() {
         loading="eager"
         decoding="async"
       />
-      
+
       {/* leichtes Overlay für bessere Lesbarkeit */}
       <div
         className="absolute inset-0 -z-10 bg-background/70"
@@ -167,17 +167,23 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="order-2 md:order-1"
           >
-            {/* Willkommenstext */}
+            {/* Willkommenstext + Vision + Zitat */}
             <div className="mb-6">
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                Willkommen auf meiner Website!
+                Hello World!
               </h1>
               <p className="mt-3 text-lg text-foreground/70">
                 Ich bin{" "}
-                <span className="text-primary">Johannes Ellmer</span> und
-                leidenschaftlicher Softwareentwickler. Ich zaubere Lösungen
-                für performante Anwendungen und moderne Web-Technologien.
-              </p>
+                <span className="text-primary">Johannes Ellmer</span>, , HTL-Schüler im
+                Bereich Informatik und angehender Softwareentwickler mit großem Interesse
+                an performanten Web-Anwendungen, sauberen APIs und klaren Datenmodellen.
+                </p>
+               <p className="mt-3 text-sm text-foreground/60 border-l-2 border-primary/60 pl-3 italic">
+                „Any fool can write code that a computer can understand. 
+                Good programmers write code that humans can understand.“
+                <br />
+                <span className="not-italic font-normal">– Martin Fowler</span>
+  </p>
             </div>
 
             {/* Suchleiste */}
@@ -271,11 +277,11 @@ export default function HeroSection() {
               )}
             </div>
 
-            {/* Info */}
+            {/* Info-Text */}
             <p className="mt-4 text-foreground/85 max-w-prose leading-relaxed">
-              Unmöglich - gibts nicht! Schau dich um und entdecke meine
-              Projekte, Zertifikate und Fähigkeiten. Wenn du Fragen hast oder
-              zusammenarbeiten möchtest, zögere nicht, mich zu kontaktieren.
+              Schau dich um und entdecke meine Projekte, Zertifikate und Fähigkeiten.
+              Wenn du Fragen hast oder dir eine Zusammenarbeit vorstellen kannst,
+              freue ich mich über deine Nachricht.
             </p>
 
             {/* Kontakt */}

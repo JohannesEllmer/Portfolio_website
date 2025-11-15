@@ -36,18 +36,16 @@ import mongoLogo from "./mongodb-logo.png";
 
 import dockerLogo from "./docker-logo.png";
 
-// Badges (Zertifikate)
 import cyberBadge from "./cyber-badge.png";
 import intro2IotBadge from "./Intro2IoT.png";
 import sapBadge from "./sap-logo.png";
 
-/** ---------- Typen ---------- *///
 
 export type Experience = {
   company: string;
   location?: string;
   position: string;
-  period: string; // z. B. "03/2022 – heute"
+  period: string; 
   achievements?: string[];
 };
 
@@ -55,7 +53,7 @@ export type Education = {
   institution: string;
   location?: string;
   degree: string;
-  period: string; // z. B. "2018 – 2022"
+  period: string; 
   achievements?: string[];
 };
 
@@ -65,7 +63,7 @@ export type Certificate = {
   date?: string;
   technologies?: string[];
   link?: string;
-  badge?: string; // Pfad / URL zum Badge-Bild
+  badge?: string; 
 };
 
 export type Project = {
@@ -80,7 +78,7 @@ export type Project = {
 
 export type SkillItem = {
   name: string;
-  logo?: string; // Pfad / URL zum Logo
+  logo?: string; 
 };
 
 export type Skills = {
@@ -102,7 +100,6 @@ export const personalInfo = {
   github: "https://github.com/JohannesEllmer",
   linkedin: "https://github.com/JohannesEllmer",
 
-  // WICHTIG: .src => string, sonst ImageMetadata-Fehler
   profilePicture: profilePicture.src,
 
   heroDescription:
@@ -178,7 +175,7 @@ export const workExperience: Experience[] = [
 export const education: Education[] = [
    {
     institution: "HTL Saalfelden – Informatik",
-    location: "Saalfelden",
+    location: "Expositur St. Johann im Pongau",
     degree: "Höhere Technische Lehranstalt für Informatik",
     period: "2021 – heute",
     achievements: [

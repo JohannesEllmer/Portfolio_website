@@ -4,18 +4,18 @@ import { cn } from "@/lib/utils";
 type Section = { id: string; label: string };
 
 const DEFAULT_SECTIONS: Section[] = [
-  { id: "about",        label: "Über mich" },
+  { id: "skills",       label: "Tech Stack" },
+  { id: "projects",     label: "Projekte" },
+  { id: "certificates", label: "Zertifikate" },
   { id: "career",       label: "Werdegang" },
   { id: "education",    label: "Ausbildung" },
-  { id: "certificates", label: "Zertifikate" },
-  { id: "projects",     label: "Projekte" },
   { id: "contact",      label: "Kontakt" },
 ];
 
 export default function SectionDotsNav({
   sections = DEFAULT_SECTIONS,
-  offset = 72,            // Höhe deines Sticky-Headers (anpassen!)
-  minVisibleRatio = 0.5,  // ab welcher Sichtbarkeit Section aktiv wird
+  offset = 72,
+  minVisibleRatio = 0.5,
 }: {
   sections?: Section[];
   offset?: number;
@@ -32,15 +32,15 @@ export default function SectionDotsNav({
       .filter((el): el is HTMLElement => !!el);
   }, [sections]);
 
-  // Optional: auto scroll-margin-top setzen (verhindert „unter Header kleben“)
   useEffect(() => {
     els.forEach((el) => {
       const current = (el as HTMLElement).style.scrollMarginTop;
-      if (!current) (el as HTMLElement).style.scrollMarginTop = `${Math.max(0, offset + 8)}px`;
+      if (!current) {
+        (el as HTMLElement).style.scrollMarginTop = `${Math.max(0, offset + 8)}px`;
+      }
     });
   }, [els, offset]);
 
-  // IntersectionObserver für Sichtbarkeits-Ratio
   useEffect(() => {
     if (!els.length || typeof window === "undefined") return;
 
@@ -52,17 +52,17 @@ export default function SectionDotsNav({
         });
 
         const best = Object.entries(ratiosRef.current).sort((a, b) => b[1] - a[1])[0];
-        if (best && best[1] >= minVisibleRatio && active !== best[0]) setActive(best[0]);
+        if (best && best[1] >= minVisibleRatio && active !== best[0]) {
+          setActive(best[0]);
+        }
       },
       { threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
 
     els.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [els, minVisibleRatio]);
 
-  // Fallback: Centerline-Methode (stabil bei schnellem Scrollen)
   useEffect(() => {
     if (!els.length || typeof window === "undefined") return;
 
@@ -83,12 +83,16 @@ export default function SectionDotsNav({
             rect.top <= centerY && rect.bottom >= centerY
               ? 0
               : Math.min(Math.abs(rect.top - centerY), Math.abs(rect.bottom - centerY));
+
           if (distance < bestDist) {
             bestDist = distance;
             bestId = el.id;
           }
         }
-        if (bestId && bestId !== active) setActive(bestId);
+
+        if (bestId && bestId !== active) {
+          setActive(bestId);
+        }
       });
     };
 
@@ -99,10 +103,8 @@ export default function SectionDotsNav({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [els]);
 
-  // Hashchange (falls externe Links springen)
   useEffect(() => {
     const onHash = () => {
       const id = window.location.hash.replace("#", "");
@@ -112,13 +114,11 @@ export default function SectionDotsNav({
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
-  // Smooth Scroll mit Offset (Sticky-Header)
   const handleClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const el = document.getElementById(id);
     if (!el) return;
 
-    // Wir nutzen scrollIntoView + scroll-margin-top (oben gesetzt) -> zuverlässiger als manuelles top
     window.history.pushState(null, "", `#${id}`);
     el.scrollIntoView({ behavior: "smooth", block: "start" });
     setActive(id);
@@ -144,7 +144,6 @@ export default function SectionDotsNav({
             aria-label={s.label}
             aria-current={isActive ? "true" : "false"}
             title={s.label}
-            // 44x44 Click-Target (WCAG), echter Dot innen
             className={cn(
               "group relative flex h-11 w-11 items-center justify-center",
               "rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -153,17 +152,21 @@ export default function SectionDotsNav({
             <span
               className={cn(
                 "block h-3 w-3 rounded-full border transition-shadow",
-                // Light Mode: neutrale, gut sichtbare Farben
                 "bg-black/20 border-black/30",
-                // Dark Mode: invertiert
-                "dark:bg-white/20 dark:border-white/30",
-                // Hover/Active States
+                "dark:bg-white/20 dark:border-white/40",
+                // Hover States
                 isActive
-                  ? "bg-primary border-primary shadow-[0_0_0_6px_var(--color-primary)/15]"
-                  : "hover:bg-black/30 hover:border-black/50 dark:hover:bg-white/30 dark:hover:border-white/50"
+                  ? [
+                      "bg-primary border-primary shadow-[0_0_0_6px_rgba(129,140,248,0.35)]",
+                      "dark:bg-yellow-300 dark:border-yellow-300",
+                      "dark:shadow-[0_0_0_6px_rgba(250,204,21,0.65)]",
+                    ].join(" ")
+                  : [
+                      "hover:bg-black/30 hover:border-black/50",
+                      "dark:hover:bg-yellow-200/40 dark:hover:border-yellow-300",
+                    ].join(" ")
               )}
             />
-            {/* Tooltip */}
             <span
               className={cn(
                 "pointer-events-none absolute right-12 top-1/2 -translate-y-1/2",
