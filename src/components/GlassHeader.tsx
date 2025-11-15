@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+
+
 const LINKS = [
   { href: "#about", label: "Über mich" },
   { href: "#career", label: "Werdegang" },
@@ -19,10 +21,21 @@ export default function GlassHeader() {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border/40">
       <div className="container max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-        <motion.a href="/" className="font-semibold tracking-tight" whileHover={{ scale: 1.02 }}>
-          {personalInfo?.name ?? "Portfolio"}
+        {/* Logo + Name */}
+        <motion.a
+          href="/"
+          className="flex items-center gap-2 font-semibold tracking-tight"
+          whileHover={{ scale: 1.02 }}
+        >
+          <img
+            src={"/favicon.png"}
+            alt="Logo Johannes Ellmer"
+            className="h-8 w-8"
+          />
+          <span>{personalInfo?.name ?? "Johannes Ellmer"}</span>
         </motion.a>
 
+        {/* Hauptnavigation (Desktop) */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-foreground/70">
           {LINKS.map((l, i) => (
             <motion.a
@@ -38,14 +51,20 @@ export default function GlassHeader() {
           ))}
         </nav>
 
+        {/* Theme-Toggle + Burger-Button */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <button className="md:hidden p-2" aria-label="Navigation" onClick={() => setOpen(v => !v)}>
+          <button
+            className="md:hidden p-2"
+            aria-label="Navigation"
+            onClick={() => setOpen((v) => !v)}
+          >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile-Navigation */}
       <AnimatePresence>
         {open && (
           <motion.div
