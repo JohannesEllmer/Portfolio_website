@@ -3,11 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "description": "Modern portfolio template with animations and glassmorphism effects",
-  "author": "Rishikesh S",
-  "license": "MIT",
+  "author": "Johannes Ellmer",
+  "license": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rishikesh2003/my-portfolio"
+    "url": "https://github.com/EllmerJohannes/Portfolio_website.git"
   },
   "scripts": {
     "dev": "astro dev",

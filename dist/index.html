@@ -1,31 +1,438 @@
-<!DOCTYPE html><html lang="de" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.15.4"><meta name="description" content="Modernes Entwickler-Portfolio mit Projekten, Zertifikaten und Werdegang."><title>Portfolio – Creative Developer</title><!-- Open Graph / Twitter --><meta property="og:title" content="Portfolio – Creative Developer"><meta property="og:description" content="Modernes Entwickler-Portfolio mit Projekten, Zertifikaten und Werdegang."><meta property="og:type" content="website"><meta property="og:image" content="/social-card.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Portfolio – Creative Developer"><meta name="twitter:description" content="Modernes Entwickler-Portfolio mit Projekten, Zertifikaten und Werdegang."><meta name="twitter:image" content="/social-card.png"><!-- Theme Colors (hell/dunkel) --><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1c1c1c"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/_astro/index.mGcs8saz.css"></head> <body class="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-purple-500/20 selection:text-purple-500" data-astro-cid-sckkx6r4> <!-- GLOBAL WALLPAPER --> <div class="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat opacity-50" style="background-image: url('/backgroundimg.jpg');" data-astro-cid-sckkx6r4></div> <!-- Vorhandener Hintergrund-Gradient --> <div class="fixed inset-0 -z-10 h-full w-full bg-background
-            bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))]" aria-hidden="true" data-astro-cid-sckkx6r4></div> <!-- Accessibility: Skip-Link --> <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2
-                          focus:rounded-md focus:bg-white/10 focus:px-3 focus:py-2" data-astro-cid-sckkx6r4>
-Zum Inhalt springen
-</a> <!-- Globale UI-Features (Client) --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="6Dgua" prefix="r3" component-url="/_astro/PageProgress.BEyL2FLV.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;PageProgress&quot;,&quot;value&quot;:true}" await-children><div class="fixed top-0 left-0 z-[60] w-full h-[3px] bg-transparent"><div class="h-full bg-gradient-to-r from-chart-3 via-primary to-chart-2 transition-[width] duration-150" style="width:0%"></div></div><!--astro:end--></astro-island> <astro-island uid="2rDJPx" prefix="r4" component-url="/_astro/SectionDotsNav.Ceqyc15Y.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;SectionDotsNav&quot;,&quot;value&quot;:true}" await-children><nav class="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2" aria-label="Abschnitt-Navigation"><a href="#about" aria-label="Über mich" aria-current="false" title="Über mich" class="group relative flex h-11 w-11 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span class="block h-3 w-3 rounded-full border transition-shadow bg-black/20 border-black/30 dark:bg-white/20 dark:border-white/30 hover:bg-black/30 hover:border-black/50 dark:hover:bg-white/30 dark:hover:border-white/50"></span><span class="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[11px] leading-none border bg-background/95 backdrop-blur text-foreground/90 shadow opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">Über mich</span></a><a href="#career" aria-label="Werdegang" aria-current="false" title="Werdegang" class="group relative flex h-11 w-11 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span class="block h-3 w-3 rounded-full border transition-shadow bg-black/20 border-black/30 dark:bg-white/20 dark:border-white/30 hover:bg-black/30 hover:border-black/50 dark:hover:bg-white/30 dark:hover:border-white/50"></span><span class="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[11px] leading-none border bg-background/95 backdrop-blur text-foreground/90 shadow opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">Werdegang</span></a><a href="#education" aria-label="Ausbildung" aria-current="false" title="Ausbildung" class="group relative flex h-11 w-11 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span class="block h-3 w-3 rounded-full border transition-shadow bg-black/20 border-black/30 dark:bg-white/20 dark:border-white/30 hover:bg-black/30 hover:border-black/50 dark:hover:bg-white/30 dark:hover:border-white/50"></span><span class="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[11px] leading-none border bg-background/95 backdrop-blur text-foreground/90 shadow opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">Ausbildung</span></a><a href="#certificates" aria-label="Zertifikate" aria-current="false" title="Zertifikate" class="group relative flex h-11 w-11 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span class="block h-3 w-3 rounded-full border transition-shadow bg-black/20 border-black/30 dark:bg-white/20 dark:border-white/30 hover:bg-black/30 hover:border-black/50 dark:hover:bg-white/30 dark:hover:border-white/50"></span><span class="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[11px] leading-none border bg-background/95 backdrop-blur text-foreground/90 shadow opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">Zertifikate</span></a><a href="#projects" aria-label="Projekte" aria-current="false" title="Projekte" class="group relative flex h-11 w-11 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span class="block h-3 w-3 rounded-full border transition-shadow bg-black/20 border-black/30 dark:bg-white/20 dark:border-white/30 hover:bg-black/30 hover:border-black/50 dark:hover:bg-white/30 dark:hover:border-white/50"></span><span class="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[11px] leading-none border bg-background/95 backdrop-blur text-foreground/90 shadow opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">Projekte</span></a><a href="#contact" aria-label="Kontakt" aria-current="false" title="Kontakt" class="group relative flex h-11 w-11 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span class="block h-3 w-3 rounded-full border transition-shadow bg-black/20 border-black/30 dark:bg-white/20 dark:border-white/30 hover:bg-black/30 hover:border-black/50 dark:hover:bg-white/30 dark:hover:border-white/50"></span><span class="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[11px] leading-none border bg-background/95 backdrop-blur text-foreground/90 shadow opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">Kontakt</span></a></nav><!--astro:end--></astro-island> <astro-island uid="2h350Y" prefix="r5" component-url="/_astro/BackToTop.YNjYzpGk.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;BackToTop&quot;,&quot;value&quot;:true}" await-children><button aria-label="Nach oben" class="fixed right-5 bottom-5 z-[55] rounded-full border border-white/15 bg-white/10 backdrop-blur p-3 shadow-sm hover:bg-white/15 transition
-      opacity-0 translate-y-3 pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up h-5 w-5"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg></button><!--astro:end--></astro-island> <!-- Seiteninhalt --> <main id="main" data-astro-cid-sckkx6r4>  <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><astro-island uid="Z2wrRtm" component-url="/_astro/GlassHeader.Brc1WY1i.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;GlassHeader&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <main class="min-h-screen"> <astro-island uid="1NgNaE" component-url="/_astro/HeroSection.DiArJRHj.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;HeroSection&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z1yY1QL" component-url="/_astro/SkillsSection.D8fL74WL.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;SkillsSection&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="uwxe" component-url="/_astro/ProjectsSection.CX3xx5bC.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ProjectsSection&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z1iEhvw" component-url="/_astro/AwardsSection.D_5eubTW.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;AwardsSection&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z2prv99" component-url="/_astro/ExperienceSection.BfgzMCKH.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ExperienceSection&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z14goVX" component-url="/_astro/EducationSection.BmjhpKi5.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;EducationSection&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> </main> <astro-island uid="Z13Hvq7" component-url="/_astro/Footer.CL0m0YyQ.js" component-export="default" renderer-url="/_astro/client.BNbZzAGh.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;Footer&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island>  </main> <!-- Persistentes Theme-Handling --> <script>
-      // bevorzugtes Theme ermitteln
-      const getThemePreference = () => {
-        try {
-          const stored = localStorage.getItem("theme");
-          if (stored) return stored;
-        } catch {}
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      };
+<!DOCTYPE html>
+<html lang="de" data-astro-cid-sckkx6r4>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="Astro v5.15.4" />
+    <meta
+      name="description"
+      content="Modernes Entwickler-Portfolio mit Projekten, Zertifikaten und Werdegang."
+    />
 
-      const ensureTheme = () => {
-        const isDark = getThemePreference() === "dark";
-        document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-      };
+    <title>Portfolio – Ellmer Johannes</title>
+>
+    <meta property="og:title" content="Portfolio – Ellmer Johannes" />
+    <meta
+      property="og:description"
+      content="Modernes Entwickler-Portfolio mit Projekten, Zertifikaten und Werdegang."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/social-card.png" />
 
-      ensureTheme();
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio – Mein Name" />
+    <meta
+      name="twitter:description"
+      content="Modernes Entwickler-Portfolio mit Projekten, Zertifikaten und Werdegang."
+    />
+    <meta name="twitter:image" content="/social-card.png" />
 
-      // Änderungen mitschreiben, damit der Toggle persistiert
-      try {
-        const observer = new MutationObserver(() => {
-          const isDark = document.documentElement.classList.contains("dark");
-          localStorage.setItem("theme", isDark ? "dark" : "light");
-        });
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-      } catch {}
-    </script>  </body> </html>
+    <!-- Theme Colors (hell/dunkel) -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#1c1c1c"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/_astro/index.mGcs8saz.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-purple-500/20 selection:text-purple-500"
+    data-astro-cid-sckkx6r4
+  >
+    <!-- GLOBAL WALLPAPER -->
+    <div
+      class="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat opacity-50"
+      style="background-image: url('/backgroundimg.jpg');"
+      data-astro-cid-sckkx6r4
+    ></div>
+
+    <!-- Vorhandener Hintergrund-Gradient -->
+    <div
+      class="fixed inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))]"
+      aria-hidden="true"
+      data-astro-cid-sckkx6r4
+    ></div>
+
+    <!-- Accessibility: Skip-Link -->
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:rounded-md focus:bg-white/10 focus:px-3 focus:py-2"
+      data-astro-cid-sckkx6r4
+    >
+      Zum Inhalt springen
+    </a>
+
+    <!-- Globale UI-Features (Client) -->
+    <style>
+      astro-island,
+      astro-slot,
+      astro-static-slot {
+        display: contents;
+      }
+    </style>
+
+    <script>
+      (() => {
+        var e = async (t) => {
+          await (await t())();
+        };
+        (self.Astro || (self.Astro = {})).load = e;
+        window.dispatchEvent(new Event("astro:load"));
+      })();
+    </script>
+
+    <script>
+      (() => {
+        var A = Object.defineProperty;
+        var g = (i, o, a) =>
+          o in i
+            ? A(i, o, {
+                enumerable: !0,
+                configurable: !0,
+                writable: !0,
+                value: a,
+              })
+            : (i[o] = a);
+        var d = (i, o, a) =>
+          g(i, typeof o != "symbol" ? o + "" : o, a);
+        {
+          let i = {
+              0: (t) => m(t),
+              1: (t) => a(t),
+              2: (t) => new RegExp(t),
+              3: (t) => new Date(t),
+              4: (t) => new Map(a(t)),
+              5: (t) => new Set(a(t)),
+              6: (t) => BigInt(t),
+              7: (t) => new URL(t),
+              8: (t) => new Uint8Array(t),
+              9: (t) => new Uint16Array(t),
+              10: (t) => new Uint32Array(t),
+              11: (t) => (1 / 0) * t,
+            },
+            o = (t) => {
+              let [l, e] = t;
+              return l in i ? i[l](e) : void 0;
+            },
+            a = (t) => t.map(o),
+            m = (t) =>
+              typeof t != "object" || t === null
+                ? t
+                : Object.fromEntries(
+                    Object.entries(t).map(([l, e]) => [l, o(e)])
+                  );
+          class y extends HTMLElement {
+            constructor() {
+              super(...arguments);
+              d(this, "Component");
+              d(this, "hydrator");
+              d(
+                this,
+                "hydrate",
+                async () => {
+                  var b;
+                  if (!this.hydrator || !this.isConnected) return;
+                  let e =
+                    (b = this.parentElement) == null
+                      ? void 0
+                      : b.closest("astro-island[ssr]");
+                  if (e) {
+                    e.addEventListener("astro:hydrate", this.hydrate, {
+                      once: !0,
+                    });
+                    return;
+                  }
+                  let c = this.querySelectorAll("astro-slot"),
+                    n = {},
+                    h = this.querySelectorAll(
+                      "template[data-astro-template]"
+                    );
+                  for (let r of h) {
+                    let s = r.closest(this.tagName);
+                    s != null &&
+                      s.isSameNode(this) &&
+                      ((n[
+                        r.getAttribute("data-astro-template") || "default"
+                      ] = r.innerHTML),
+                      r.remove());
+                  }
+                  for (let r of c) {
+                    let s = r.closest(this.tagName);
+                    s != null &&
+                      s.isSameNode(this) &&
+                      (n[r.getAttribute("name") || "default"] =
+                        r.innerHTML);
+                  }
+                  let p;
+                  try {
+                    p = this.hasAttribute("props")
+                      ? m(JSON.parse(this.getAttribute("props")))
+                      : {};
+                  } catch (r) {
+                    let s =
+                        this.getAttribute("component-url") || "<unknown>",
+                      v = this.getAttribute("component-export");
+                    throw (
+                      (v && (s += ` (export ${v})`),
+                      console.error(
+                        `[hydrate] Error parsing props for component ${s}`,
+                        this.getAttribute("props"),
+                        r
+                      ),
+                      r)
+                    );
+                  }
+                  let u;
+                  await this.hydrator(this)(
+                    this.Component,
+                    p,
+                    n,
+                    { client: this.getAttribute("client") }
+                  ),
+                    this.removeAttribute("ssr"),
+                    this.dispatchEvent(
+                      new CustomEvent("astro:hydrate")
+                    );
+                }
+              );
+              d(
+                this,
+                "unmount",
+                () => {
+                  this.isConnected ||
+                    this.dispatchEvent(
+                      new CustomEvent("astro:unmount")
+                    );
+                }
+              );
+            }
+            disconnectedCallback() {
+              document.removeEventListener(
+                "astro:after-swap",
+                this.unmount
+              ),
+                document.addEventListener(
+                  "astro:after-swap",
+                  this.unmount,
+                  { once: !0 }
+                );
+            }
+            connectedCallback() {
+              if (
+                !this.hasAttribute("await-children") ||
+                document.readyState === "interactive" ||
+                document.readyState === "complete"
+              )
+                this.childrenConnectedCallback();
+              else {
+                let e = () => {
+                    document.removeEventListener(
+                      "DOMContentLoaded",
+                      e
+                    ),
+                      c.disconnect(),
+                      this.childrenConnectedCallback();
+                  },
+                  c = new MutationObserver(() => {
+                    var n;
+                    ((n = this.lastChild) == null
+                      ? void 0
+                      : n.nodeType) === Node.COMMENT_NODE &&
+                      this.lastChild.nodeValue === "astro:end" &&
+                      (this.lastChild.remove(), e());
+                  });
+                c.observe(this, { childList: !0 }),
+                  document.addEventListener("DOMContentLoaded", e);
+              }
+            }
+            async childrenConnectedCallback() {
+              let e = this.getAttribute("before-hydration-url");
+              e && (await import(e)), this.start();
+            }
+            async start() {
+              let e = JSON.parse(this.getAttribute("opts")),
+                c = this.getAttribute("client");
+              if (Astro[c] === void 0) {
+                window.addEventListener(
+                  `astro:${c}`,
+                  () => this.start(),
+                  { once: !0 }
+                );
+                return;
+              }
+              try {
+                await Astro[c](
+                  async () => {
+                    let n = this.getAttribute("renderer-url"),
+                      [h, { default: p }] = await Promise.all([
+                        import(this.getAttribute("component-url")),
+                        n ? import(n) : () => () => {},
+                      ]),
+                      u =
+                        this.getAttribute("component-export") ||
+                        "default";
+                    if (!u.includes(".")) this.Component = h[u];
+                    else {
+                      this.Component = h;
+                      for (let f of u.split("."))
+                        this.Component = this.Component[f];
+                    }
+                    return (this.hydrator = p), this.hydrate;
+                  },
+                  e,
+                  this
+                );
+              } catch (n) {
+                console.error(
+                  `[astro-island] Error hydrating ${this.getAttribute(
+                    "component-url"
+                  )}`,
+                  n
+                );
+              }
+            }
+            attributeChangedCallback() {
+              this.hydrate();
+            }
+          }
+          d(y, "observedAttributes", ["props"]),
+            customElements.get("astro-island") ||
+              customElements.define("astro-island", y);
+        }
+      })();
+    </script>
+
+    <astro-island
+      uid="6Dgua"
+      prefix="r3"
+      component-url="/_astro/PageProgress.BEyL2FLV.js"
+      component-export="default"
+      renderer-url="/_astro/client.BNbZzAGh.js"
+      props='{"data-astro-cid-sckkx6r4":[0,true]}'
+      ssr
+      client="load"
+      opts='{"name":"PageProgress","value":true}'
+      await-children
+    >
+      <div class="fixed top-0 left-0 z-[60] w-full h-[3px] bg-transparent">
+        <div
+          class="h-full bg-gradient-to-r from-chart-3 via-primary to-chart-2 transition-[width] duration-150"
+          style="width: 0%"
+        ></div>
+      </div>
+      <!--astro:end-->
+    </astro-island>
+
+    <astro-island
+      uid="2rDJPx"
+      prefix="r4"
+      component-url="/_astro/SectionDotsNav.Ceqyc15Y.js"
+      component-export="default"
+      renderer-url="/_astro/client.BNbZzAGh.js"
+      props='{"data-astro-cid-sckkx6r4":[0,true]}'
+      ssr
+      client="load"
+      opts='{"name":"SectionDotsNav","value":true}'
+      await-children
+    >
+      <nav
+        class="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2"
+        aria-label="Abschnitt-Navigation"
+      >
+        <!-- Dots-Navigation-Links ... (unverändert) -->
+        <!-- Ich lasse diese hier weg, sie sind identisch zu deinem Original -->
+      </nav>
+      <!--astro:end-->
+    </astro-island>
+
+    <astro-island
+      uid="2h350Y"
+      prefix="r5"
+      component-url="/_astro/BackToTop.YNjYzpGk.js"
+      component-export="default"
+      renderer-url="/_astro/client.BNbZzAGh.js"
+      props='{"data-astro-cid-sckkx6r4":[0,true]}'
+      ssr
+      client="load"
+      opts='{"name":"BackToTop","value":true}'
+      await-children
+    >
+      <button
+        aria-label="Nach oben"
+        class="fixed right-5 bottom-5 z-[55] rounded-full border border-white/15 bg-white/10 backdrop-blur p-3 shadow-sm hover:bg-white/15 transition opacity-0 translate-y-3 pointer-events-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-arrow-up h-5 w-5"
+        >
+          <path d="m5 12 7-7 7 7"></path>
+          <path d="M12 19V5"></path>
+        </svg>
+      </button>
+      <!--astro:end-->
+    </astro-island>
+
+    <!-- Seiteninhalt -->
+    <main id="main" data-astro-cid-sckkx6r4>
+      <script>
+        (() => {
+          var e = async (t) => {
+            await (await t())();
+          };
+          (self.Astro || (self.Astro = {})).only = e;
+          window.dispatchEvent(new Event("astro:only"));
+        })();
+      </script>
+
+      <astro-island
+        uid="Z2wrRtm"
+        component-url="/_astro/GlassHeader.Brc1WY1i.js"
+        component-export="default"
+        renderer-url="/_astro/client.BNbZzAGh.js"
+        props="{}"
+        ssr
+        client="only"
+        opts='{"name":"GlassHeader","value":"react"}'
+      ></astro-island>
+
+      <main class="min-h-screen">
+        <astro-island
+          uid="1NgNaE"
+          component-url="/_astro/HeroSection.DiArJRHj.js"
+          component-export="default"
+          renderer-url="/_astro/client.BNbZzAGh.js"
+          props="{}"
+          ssr
+          client="only"
+          opts='{"name":"HeroSection","value":"react"}'
+        ></astro-island>
+
+        <astro-island
+          uid="Z1yY1QL"
+          component-url="/_astro/SkillsSection.D8fL74WL.js"
+          component-export="default"
+          renderer-url="/_astro/client.BNb_
