@@ -354,4 +354,13 @@ export const projects: Project[] = [
     demo: "",
     //image: projectDesignsystemImg.src,
   },
+  {
+    title: "POS1 - Vier Gewinnt",
+    summary:
+      "Erstellung eines Vier Gewinnt Spiels in C in der Konsole",
+    stack: ["C"],
+    github: "https://github.com/JohannesEllmer/4Gewinnt_C",
+    demo: "",
+    //image: projectDesignsystemImg.src,
+  },
 ];

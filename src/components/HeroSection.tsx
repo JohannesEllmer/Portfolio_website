@@ -20,7 +20,18 @@ type ResultItem = {
 };
 
 export default function HeroSection() {
-  // ---------- Suche ----------
+  const bgImages = [
+    "/backgroundimg.jpg",
+    "/backgroundimg2.jpg",
+    "/backgroundimg3.jpg",
+    "/backgroundimg4.jpg",
+  ];
+
+  const [bgImage] = useState(() => {
+    const randomIndex = Math.floor(Math.random() * bgImages.length);
+    return bgImages[randomIndex];
+  });
+
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -142,9 +153,8 @@ export default function HeroSection() {
   // ---------- UI ----------
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
-      {/* Optimierter Wallpaper-Hintergrund mit img Tag */}
       <img
-        src="/backgroundimg2.jpg"
+        src={bgImage}
         alt=""
         className="absolute inset-0 -z-20 w-full h-full object-cover opacity-60"
         aria-hidden="true"
@@ -152,7 +162,6 @@ export default function HeroSection() {
         decoding="async"
       />
 
-      {/* leichtes Overlay für bessere Lesbarkeit */}
       <div
         className="absolute inset-0 -z-10 bg-background/70"
         aria-hidden="true"
@@ -167,7 +176,6 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="order-2 md:order-1"
           >
-            {/* Willkommenstext + Vision + Zitat */}
             <div className="mb-6">
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
                 Hello World!
@@ -177,13 +185,13 @@ export default function HeroSection() {
                 <span className="text-primary">Johannes Ellmer</span>, HTL-Schüler im
                 Bereich Informatik und angehender Softwareentwickler mit großem Interesse
                 an performanten Web-Anwendungen, sauberen APIs und klaren Datenmodellen.
-                </p>
-               <p className="mt-3 text-sm text-foreground/60 border-l-2 border-primary/60 pl-3 italic">
+              </p>
+              <p className="mt-3 text-sm text-foreground/60 border-l-2 border-primary/60 pl-3 italic">
                 „Any fool can write code that a computer can understand. 
                 Good programmers write code that humans can understand.“
                 <br />
                 <span className="not-italic font-normal">– Martin Fowler</span>
-  </p>
+              </p>
             </div>
 
             {/* Suchleiste */}
@@ -307,7 +315,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Bild */}
           <div className="order-1 md:order-2">
             <MotionWrapper>
               <div className="flex justify-center md:justify-end">
