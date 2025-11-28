@@ -214,6 +214,7 @@ export const certificates: Certificate[] = [
     issuer: "Cisco Networking Academy",
     date: "2024",
     badge: cyberBadge.src,
+    link: "https://www.credly.com/badges/7fb84f32-45d9-42d1-a32d-692ecba0b7aa/public_url",
     technologies: ["Security Basics", "Netzwerksicherheit", "Bedrohungsmodelle"],
   },
   {
@@ -221,6 +222,7 @@ export const certificates: Certificate[] = [
     issuer: "Cisco Networking Academy",
     date: "2025",
     badge: intro2IotBadge.src,
+    link: "https://www.credly.com/badges/4581fdf0-4cbe-4f05-b3b9-14d7918b28af/public_url",
     technologies: ["IoT-Grundlagen", "Sensorik", "Netzwerke"],
   },
   {
